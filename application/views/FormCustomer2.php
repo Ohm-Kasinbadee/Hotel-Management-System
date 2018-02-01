@@ -166,7 +166,7 @@
                     		    <h4>ข้อมูลลูกค้า:</h4>
                     			<div class="form-group">
                     			    <label class="sr-only" ></label>
-                                    <input value="asdasdasd" type="text" name="" placeholder="ชื่อจริง.." class="f1-first-name form-control" id="">
+                                    <input value="asdasdasd" type="text" name="" placeholder="ชื่อจริง.." class="f1-first-name form-control" id="j">
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" ></label>
@@ -206,7 +206,7 @@
                                 </div> -->
 								<div class="form-group"  >
 									<label class="sr-only" ></label>
-									<select class="form-control" id="numRoom" onchange="test()" >
+									<select class="form-control" id="numRoom " onchange="test() " type="text"  >
 										<option value="">จำนวนห้องพัก</option>									
 										<option value="1">1</option>
 										<option value="2">2</option>
