@@ -19,7 +19,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
 	<!-- GLOBAL STYLES -->
-	<!-- GLOBAL STYLES -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/main.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>" />
@@ -58,86 +57,16 @@
 <!-- END HEAD -->
 
 <!-- BEGIN BODY -->
-
+ <body>
 <!-- MAIN WRAPPER -->
 <div id="wrap">
 
 	<!--PAGE CONTENT -->
 
 	<div class="inner">
-		<!-- <div class="row">
-			<div class="col-lg-12 text-center">
-				<h1>แบบฟอร์มกรอกข้อมูลลูกค้า </h1>
-			</div>
-		</div>
-		<hr /> -->
-
 		<div class="row">
 			</header>
 			<div id="collapseOne" class="accordion-body collapse in body">
-				<!-- <form action="#" class="form-horizontal" id="block-validate">
-
-					<div class="form-group">
-						<label class="control-label col-lg-4">ID :</label>
-						<div class="col-lg-1">
-							<input type="text" id="required2" name="required2" class="form-control" maxlength="10" value="a"  />
-						</div>
-
-						 <label class="control-label col-lg-2"> ประเภทห้อง</label>
-						<label class="radio-inline">
-							<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="checked" />เข้าพัก
-						</label>
-						<label class="radio-inline">
-							<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2" />จอง
-						</label> 
-					</div>
-
-					<div class="form-group">
-					<div class="form-group ">
-					<label class="control-label col-lg-4">จำนวนห้องพัก :</label>
-					<div class="col-lg-2">
-					<select class="form-control">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-						<option>11</option>
-						<option>12</option>
-						<option>13</option>
-						<option>14</option>
-						<option>15</option>
-					</select>
-					</div>
-
-						<label class="control-label col-lg-1">โปรโมชั่น :</label>
-						<div class="col-lg-2">
-						<select class="form-control">
-						<option>ไม่มี</option>
-						<option>ลด10%</option>
-					</select>
-					</div>
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-lg-4">วันที่จอง :</label>
-						<div class="col-lg-2">
-							<input type="date" id="date2" name="date2" class="form-control"/>
-						</div>
-					</div>
-
-					<div class="form-actions no-margin-bottom" style="text-align:center;">
-						<input type="submit" value="ถัดไป" class="btn btn-primary btn-lg " />
-						<a href="<?php echo base_url('index.php/FormCustomer_controller')?>"  class="btn btn-danger btn-lg" >ย้อนกลับ</a>
-						
-					</div>
-				</form> -->
-
 				<div class="row">
                     <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
                     	<form action="<?php echo base_url('index.php/FormCustomer_controller/addcustomer')?>" role="form" class="f1" method="post">
@@ -206,7 +135,7 @@
                                 </div> -->
 								<div class="form-group"  >
 									<label class="sr-only" ></label>
-									<select class="form-control" id="numRoom " onchange="test() " type="text"  >
+									<select class="form-control" id="numRoom" onchange="test() " type="text"  >
 										<option value="">จำนวนห้องพัก</option>									
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -298,8 +227,6 @@
 						'<div class="form-group">'+
 							'<label class="sr-only" ></label>'+
 							'<input type="date" name="f1-google-plus" placeholder="วันที่v..." class="f1-google-plus form-control" id="f1-google-plus">'+
-						'</div>'+
-						'<div class="f1-buttons">'+						
 						'</div><br>';
 			for(var i=0; i < num.value;i++){
 				tagDetail.append(html);

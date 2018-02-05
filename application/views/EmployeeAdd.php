@@ -17,15 +17,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
 	<!-- GLOBAL STYLES -->
-	<!-- GLOBAL STYLES -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/main.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/MoneAdmin.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/Font-Awesome/css/font-awesome.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('http://fonts.googleapis.com/css?family=Roboto:400,100,300,500')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css')?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/form-elements.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
 	<!--END GLOBAL STYLES -->
 
 	<!-- PAGE LEVEL STYLES -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/validationengine/css/validationEngine.jquery.css')?>" />
 	<link href="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.css')?>" rel="stylesheet" />
 	<!-- END PAGE LEVEL  STYLES -->
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -187,26 +195,30 @@
 
 	<!--END MAIN WRAPPER -->
 
-	<!-- FOOTER -->
-	<div id="footer">
-		<p>&copy; binarytheme &nbsp;2014 &nbsp;</p>
-	</div>
-	<!--END FOOTER -->
 	<!-- GLOBAL SCRIPTS -->
 	<script src="<?php echo base_url('assets/plugins/jquery-2.0.3.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js')?>"></script>
 	<!-- END GLOBAL SCRIPTS -->
+
 	<!-- PAGE LEVEL SCRIPTS -->
-	<script src="<?php echo base_url('assets/plugins/dataTables/jquery.dataTables.js')?>"></script>
-	<script src="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/validationengine/js/jquery.validationEngine.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/js/validationInit.js')?>"></script>
 	<script>
 		$(document).ready(function () {
 			$('#dataTables-example').dataTable();
 		});
-
 	</script>
 	<!-- END PAGE LEVEL SCRIPTS -->
+
+	 <!-- Javascript -->
+	 <script src="<?php echo base_url('assets/js/jquery-1.11.1.min.js')?>"></script>
+        <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
+        <script src="<?php echo base_url('assets/js/jquery.	backstretch.min.js')?>"></script>
+        <script src="<?php echo base_url('assets/js/retina-1.1.0.min.js')?>"></script>
+        <script src="<?php echo base_url('assets/js/scripts.js')?>"></script>
 </body>
 <!-- END BODY -->
 
