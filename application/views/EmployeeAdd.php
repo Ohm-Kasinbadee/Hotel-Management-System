@@ -65,113 +65,105 @@
 				<div class="row">
 			</header>
 			<div id="collapseOne" class="accordion-body collapse in body">
-				<form action="#" class="form-horizontal" id="block-validate">
-
+				<form action="<?php echo base_url('index.php/EmployeeAdd_controller/getdataemp')?>"  class="form-horizontal" id="block-validate" method="post">
 					<div class="form-group">
 						<label class="control-label col-lg-4">ID :</label>
-						<div class="col-lg-1">
-							<input type="text" id="required2" name="required2" class="form-control" maxlength="10"   />
+						<div class="col-lg-5">
+							<input type="text" id="IDemp" name="IDemp" class="form-control" maxlength="10"   />
 						</div>
-
-
-						<label class="control-label col-lg-2">รูป  :</label>
-						<div class="form-group ">
-                            <input type="file" />
-                        </div>
-						</label>
 					</div>
 
 					<div class="form-group">
 						<label class="control-label col-lg-4">ชื่อจริง :</label>
-						<div class="col-lg-2">
-							<input type="text" id="Fname" name="Fname" class="form-control" />
+						<div class="col-lg-5">
+							<input type="text" id="Fnameemp" name="Fnameemp" class="form-control" />
 						</div>
+					</div>
 
-						<label class="control-label col-lg-1">นามสกุล :</label>
-						<div class="col-lg-2">
-							<input type="text" id="required2" name="required2" class="form-control" />
+					<div class="form-group">
+						<label class="control-label col-lg-4">นามสกุล :</label>
+						<div class="col-lg-5">
+							<input type="text" id="Lnameemp" name="Lnameemp" class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="control-label col-lg-4">เบอร์โทร :</label>
-						<div class="col-lg-2">
-							<input type="text" id="required2" name="required2" class="form-control" maxlength="10" />
+						<div class="col-lg-5">
+							<input type="text" id="Telemp" name="Telemp" class="form-control" maxlength="10" />
 						</div>
-
-						<label class="control-label col-lg-1">อีเมล :</label>
-						<div class="col-lg-2">
-							<input type="text" id="required2" name="required2" class="form-control" maxlength="13" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-lg-4">อีเมล :</label>
+						<div class="col-lg-5">
+							<input type="text" id="Emailemp" name="Emailemp" class="form-control"  />
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="control-label col-lg-4">วุฒิการศึกษา :</label>
-						<div class="col-lg-2">
-						<select class="form-control">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
+						<div class="col-lg-5">
+							<input type="text" id="Educationemp" name="Educationemp" class="form-control" />
 						</div>
-						<label class="control-label col-lg-1">เพศ :</label>
-						<label class="radio-inline">
-							<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="checked" />ชาย
 						</label>
-						<label class="radio-inline">
-							<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2" />หญิง
+					</div>
+
+					<div class="form-group ">
+						<label class="control-label col-lg-4">เพศ :</label>
+						<label class="radio-inline col-lg-1">
+							<input type="radio" name="genderemp" id="genderemp" value="M" checked="checked" />ชาย
+						</label>
+						<label class="radio-inline col-lg-1">
+							<input type="radio" name="genderemp" id="genderemp" value="F" />หญิง
 						</label>
 					</div>
 
 					<div class="form-group">
+						<label class="control-label col-lg-4">เงินเดือน :</label>
+						<div class="col-lg-5">
+						<select class="form-control" name="salaryemp" >
+							<option value="10000.00">10000.00</option>
+							<option value="15000.00">15000.00</option>
+						</select>
+						</div>
+					</div>
+
+					<div class="form-group">
 						<label class="control-label col-lg-4">วันเกิด :</label>
-						<div class="col-lg-2">
-							<input type="date" id="date2" name="date2" class="form-control"/>
+						<div class="col-lg-5">
+							<input type="date" id="birthdayemp" name="birthdayemp" class="form-control"/>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="control-label col-lg-4">ตำแหน่ง :</label>
-						<div class="col-lg-2">
+						<div class="col-lg-5"  name="positionemp">
 						<select class="form-control">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
+							<option value="001">แม่บ้าน</option>
+							<option value="002">พ่อบ้าน</option>
+
 						</select>
 						</div>
-						<label class="control-label col-lg-1">ประเภทการทำงาน :</label>
-						<div class="col-lg-2">
-						<select class="form-control">
-							<option>ประจำ</option>
-							<option>พาททาม</option>
-							<option>รายวัน</option>
-							<option>รายชั่วโมง</option>
-						</select>
 						</div>
-						
-					</div>
 
 					<div class="form-group">
 						<label class="control-label col-lg-4">วันที่ทำงาน :</label>
-						<div class="col-lg-2">
-							<input type="date" id="date2" name="date2" class="form-control"/>
+						<div class="col-lg-5">
+							<input type="date" id="dateemp" name="dateemp" class="form-control"/>
 						</div>
 					</div>
 
 					<div class="form-group ">
 					<label class="control-label col-lg-4">ที่อยู่ :</label>
-					<div class="col-lg-4">
-					<textarea class="form-control" rows="6"></textarea>
+					<div class="col-lg-5">
+					<textarea class="form-control" rows="6" name="addressemp" id="addressemp" ></textarea>
 				</div>
 					</div>
 				</div>
 
 					<div class="form-actions no-margin-bottom" style="text-align:center;">
-						<input type="submit" value="ยืนยัน" class="btn btn-primary btn-lg " />
+						<input  href="<?php echo base_url('index.php/EmployeeAdd_controller/getdataemp')?>" id="comment_submit" type="submit" value="ยืนยัน" class="btn btn-primary btn-lg " />
 						<a href="<?php echo base_url('index.php/EmployeeList_controller')?>"  class="btn btn-danger btn-lg" >ยกเลิก</a>
 						
 					</div>

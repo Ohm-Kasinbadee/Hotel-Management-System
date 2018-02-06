@@ -7,4 +7,11 @@ class EmployeeAdd_controller extends CI_Controller {
 	{
     	$this->load->view('EmployeeAdd');
 	}
+
+	public function getdataemp(){
+		$this->load->model('EmployeeAddModel');
+		$this->EmployeeAddModel->getdataemp();
+		 $this->load->view('EmployeeList');
+	}
+	
 }

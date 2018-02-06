@@ -6,33 +6,27 @@ class EmployeeAddModel extends CI_Model {
             parent::__construct();
         }
 
-        // public function Add_data() {
-        //     $id = $this->input->post('id');
-        //     $fname = $this->input->post('first_name');
-        //     $lname = $this->input->post('last_name');
-        //     $tel = $this->input->post('tel');
-        //     $email = $this->input->post('email');
-        //     $Education = $this->input->post('Education');
+        public function getdataemp(){
 
-        //     $data = array(
-        //         'user_ID' => $username,
-        //         'userPassword' => $password,
-        //         'userType' => "R"
-        //     );
-        //     $this->db->insert('user', $data);
+            $EMP_ID = $this->input->post('IDemp');
+            $POSITION_POS_ID = $this->input->post('positionemp');
+            $EMP_FNAME = $this->input->post('Fnameemp');
+            $EMP_LNAME = $this->input->post('Lnameemp');
+            $EMP_PHONE = $this->input->post('Telemp');
+            $EMP_EMAIL = $this->input->post('Emailemp');
+            $EMP_EDUCATION = $this->input->post('Educationemp');
+            $EMP_GENDER = $this->input->post('genderemp');
+            $EMP_SALARY = $this->input->post('salaryemp');
+            $EMP_BIRTHDATE = $this->input->post('birthdayemp');
+            $EMP_DATESTARTWORK = $this->input->post('dateemp');
+            $EMP_ADDRESS = $this->input->post('addressemp');
 
-        //     $data2 = array(
-        //         'user_ID' => $username,
-        //         'ReaderFname' => $fname,
-        //         'ReaderLname' => $lname,
-        //         'ReaderGender' => $gender,
-        //         'ReaderDateBirth' => date("Y-m-d", strtotime($birthday)),
-        //         'ReaderTel' => $tel,
-        //         'ReaderCash' => 0
-        //     );
-        //     $this->db->insert('reader', $data2);
-
-        //     return true;          
-        // }
+            $query = $this->db->query("INSERT INTO employee (EMP_ID, POSITION_POS_ID, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_EMAIL, 
+                                                   EMP_EDUCATION, EMP_GENDER, EMP_SALARY, EMP_BIRTHDATE, EMP_DATESTARTWORK, EMP_ADDRESS)
+                                       VALUES('$EMP_ID', '$POSITION_POS_ID', '$EMP_FNAME', '$EMP_LNAME', '$EMP_PHONE',
+                                              '$EMP_EMAIL', '$EMP_EDUCATION', '$EMP_GENDER', '$EMP_SALARY', 
+                                              '$EMP_BIRTHDATE', '$EMP_DATESTARTWORK', '$EMP_ADDRESS')"); // session               
+        //     print_r($query);
+        }
 
 }
