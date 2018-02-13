@@ -5,13 +5,17 @@ class EmployeeAdd_controller extends CI_Controller {
 
 	public function index()
 	{
-    	$this->load->view('EmployeeAdd');
+		$this->load->model('EmployeeAddModel');
+		$datas = $this->EmployeeAddModel->dataemp();
+		$dataShowemp['position'] = $datas;
+
+    	$this->load->view('EmployeeAdd',$dataShowemp);
 	}
 
 	public function getdataemp(){
 		$this->load->model('EmployeeAddModel');
 		$this->EmployeeAddModel->getdataemp();
-		 $this->load->view('EmployeeList');
+		 redirect('EmployeeList_controller');
 	}
 	
 }

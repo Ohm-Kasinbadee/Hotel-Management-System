@@ -56,7 +56,7 @@
 			<div class="inner">
 				<div class="row">
 					<div class="col-lg-12 text-center">
-						<h2> ฟอร์มพนักงาน </h2>
+						<h2> แก้ไขฟอร์มพนักงาน </h2>
 					</div>
 				</div>
 				<hr />
@@ -65,26 +65,25 @@
 				<div class="row">
 					</header>
 					<div id="collapseOne" class="accordion-body collapse in body">
-						<form action="<?php echo base_url('index.php/EmployeeAdd_controller/getdataemp')?>" class="form-horizontal" id="block-validate"
+						<form action="<?php echo base_url('index.php/EmployeeUpdate_controller/updateemp')?>" class="form-horizontal" id="block-validate"
 						method="post">
-							<!-- <div class="form-group">
+							<div class="form-group">
 						<label class="control-label col-lg-4">ID :</label>
 						<div class="col-lg-5">
-							<input type="text" id="IDemp" name="IDemp" class="form-control" maxlength="5" pattern="([0-9]{5})" placeholder="รหัสพนักงาน.." required/>
+							<label class="control-label col-lg-1"><?php echo $employee[0]['EMP_ID'] ?></label>
 						</div>
-					</div> -->
-
+					</div>
 							<div class="form-group">
 								<label class="control-label col-lg-4">ชื่อ :</label>
 								<div class="col-lg-5">
-									<input type="text" id="Fnameemp" name="Fnameemp" class="form-control" placeholder="นาย/นาง/นางสาว/.." required />
+									<input type="text" id="Fnameemp" name="Fnameemp" class="form-control" placeholder="นาย/นาง/นางสาว/.."  value="<?php echo $employee[0]['EMP_FNAME'] ?>" required />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-lg-4">นามสกุล :</label>
 								<div class="col-lg-5">
-									<input type="text" id="Lnameemp" name="Lnameemp" class="form-control" placeholder="นามสกุล.." required />
+									<input type="text" id="Lnameemp" name="Lnameemp" class="form-control" placeholder="นามสกุล.." value="<?php echo $employee[0]['EMP_LNAME']?>" required />
 								</div>
 							</div>
 
@@ -92,14 +91,14 @@
 								<label class="control-label col-lg-4">เบอร์โทร :</label>
 								<div class="col-lg-5">
 									<input type="text" id="Telemp" name="Telemp" class="form-control" maxlength="10" pattern="([0]{1})([0-9]{9})" placeholder="+66"
-									required />
+                                    value="<?php echo $employee[0]['EMP_PHONE']?>" required />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-lg-4">อีเมล :</label>
 								<div class="col-lg-5">
-									<input type="email" id="Emailemp" name="Emailemp" class="form-control" placeholder="name@email.com" required />
+									<input type="email" id="Emailemp" name="Emailemp" class="form-control" placeholder="name@email.com"  value="<?php echo $employee[0]['EMP_EMAIL']?>" required />
 								</div>
 							</div>
 
@@ -107,13 +106,13 @@
 								<label class="control-label col-lg-4">วุฒิการศึกษา :</label>
 								<div class="col-lg-5">
 									<select class="form-control" id="Educationemp" name="Educationemp" required>
-										<option value="ระดับปฐมวัย">ระดับปฐมวัย</option>
-										<option value="ระดับประถมศึกษา">ระดับประถมศึกษา</option>
-										<option value="ระดับมัธยมศึกษา">ระดับมัธยมศึกษา</option>
-										<option value="ระดับอาชีวศึกษา">ระดับอาชีวศึกษา</option>
-										<option value="ระดับอุดมศึกษา">ระดับอุดมศึกษา</option>
-										<option value="อื่นๆ">อื่นๆ</option>
-										<option value="ไม่จบการศึกษาใดๆ">ไม่จบการศึกษาใดๆ</option>
+									<option <?php if($employee[0]['EMP_EDUCATION'] == 'ระดับปฐมวัย'){echo("selected");}?>>ระดับปฐมวัย</option>
+									<option <?php if($employee[0]['EMP_EDUCATION'] == 'ระดับประถมศึกษา'){echo("selected");}?>>ระดับประถมศึกษา</option>
+									<option <?php if($employee[0]['EMP_EDUCATION'] == 'ระดับมัธยมศึกษา'){echo("selected");}?>>ระดับมัธยมศึกษา</option>
+									<option <?php if($employee[0]['EMP_EDUCATION'] == 'ระดับอาชีวศึกษา'){echo("selected");}?>>ระดับอาชีวศึกษา</option>
+									<option <?php if($employee[0]['EMP_EDUCATION'] == 'ระดับอุดมศึกษา'){echo("selected");}?>>ระดับอุดมศึกษา</option>
+									<option <?php if($employee[0]['EMP_EDUCATION'] == 'อื่นๆ'){echo("selected");}?>>อื่นๆ</option>
+									<option <?php if($employee[0]['EMP_EDUCATION'] == 'ไม่จบการศึกษาใดๆ'){echo("selected");}?>>ไม่จบการศึกษาใดๆ</option>
 									</select>
 								</div>
 								</label>
@@ -122,21 +121,21 @@
 							<div class="form-group ">
 								<label class="control-label col-lg-4">เพศ :</label>
 								<label class="radio-inline col-lg-1">
-									<input type="radio" name="genderemp" id="genderemp" value="M" checked="checked" required />ชาย
+									<input type="radio" name="genderemp" id="genderemp" value="M" checked="checked" value="<?php echo $employee[0]['EMP_GENDER']?>" required />ชาย
 								</label>
 								<label class="radio-inline col-lg-1">
-									<input type="radio" name="genderemp" id="genderemp" value="F" required />หญิง
+									<input type="radio" name="genderemp" id="genderemp" value="F" value="<?php echo $employee[0]['EMP_GENDER']?>" required />หญิง
 								</label>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-lg-4">เงินเดือน :</label>
 								<div class="col-lg-5">
-									<select class="form-control" name="salaryemp">
-										<option value="6000.00">6000.00 THB</option>
-										<option value="8000.00">8000.00 THB</option>
-										<option value="10000.00">10000.00 THB</option>
-										<option value="15000.00">15000.00 THB</option>
+									<select class="form-control" name="salaryemp" >
+									<option <?php if($employee[0]['EMP_SALARY'] == '6000.00'){echo("selected");}?>>6000.00</option>
+									<option <?php if($employee[0]['EMP_SALARY'] == '8000.00'){echo("selected");}?>>8000.00</option>
+									<option <?php if($employee[0]['EMP_SALARY'] == '10000.00'){echo("selected");}?>>10000.00</option>
+									<option <?php if($employee[0]['EMP_SALARY'] == '15000.00'){echo("selected");}?>>15000.00</option>
 									</select>
 								</div>
 							</div>
@@ -144,7 +143,7 @@
 							<div class="form-group">
 								<label class="control-label col-lg-4">วันเกิด :</label>
 								<div class="col-lg-5">
-									<input type="date" id="birthdayemp" name="birthdayemp" class="form-control" required />
+									<input type="date" id="birthdayemp" name="birthdayemp" class="form-control" value="<?php echo $employee[0]['EMP_BIRTHDATE']?>" required />
 								</div>
 							</div>
 
@@ -152,12 +151,12 @@
 								<label class="control-label col-lg-4">ตำแหน่ง :</label>
 								<div class="col-lg-5">
 									<select class="form-control" name="positionemp">
-										<?php if($position != null) 
-                  				foreach($position as $key => $row) :?>
-										<option value="<?php echo $row['POS_ID'] ?>">
-											<?php echo $row['POS_NAME'] ?> </option>
-										<?php endforeach ?>
-
+									<option <?php if($employee[0]['POS_ID'] == '001'){echo("selected");}?>>แม่บ้าน</option>
+									<option <?php if($employee[0]['POS_ID'] == '002'){echo("selected");}?>>พ่อบ้าน</option>
+									<option <?php if($employee[0]['POS_ID'] == '003'){echo("selected");}?>>แม่ครัว</option>
+									<option <?php if($employee[0]['POS_ID'] == '004'){echo("selected");}?>>คนงาน</option>
+									<option <?php if($employee[0]['POS_ID'] == '005'){echo("selected");}?>>พนักงานตอนรับ</option>
+									<option <?php if($employee[0]['POS_ID'] == '006'){echo("selected");}?>>เด็กเสริฟ</option>
 									</select>
 								</div>
 							</div>
@@ -165,14 +164,14 @@
 							<div class="form-group">
 								<label class="control-label col-lg-4">วันที่ทำงาน :</label>
 								<div class="col-lg-5">
-									<input type="date" id="dateemp" name="dateemp" class="form-control" required />
+									<input type="date" id="dateemp" name="dateemp" class="form-control"value="<?php echo $employee[0]['EMP_DATESTARTWORK']?>" required />
 								</div>
 							</div>
 
 							<div class="form-group ">
 								<label class="control-label col-lg-4">ที่อยู่ :</label>
 								<div class="col-lg-5">
-									<textarea class="form-control" rows="6" name="addressemp" id="addressemp" required></textarea>
+									<textarea class="form-control" rows="6" name="addressemp" id="addressemp" required cols="40" rows="6"><?php echo $employee[0]['EMP_ADDRESS']?></textarea>
 								</div>
 							</div>
 					</div>
@@ -204,10 +203,10 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">บันทึกสำเร็จ</h4>
+					<h4 class="modal-title" id="myModalLabel">แก้ไขสำเร็จ</h4>
 				</div>
 				<div class="modal-body" >
-					<span style="font-size:1000%; color:green "  ><i class="icon-ok-circle "></i></span>
+					<span style="font-size:1000%; color:green " ><i class="icon-ok-circle "></i></span>
 				</div>
 				<div class="modal-footer">
 					<button  id="modal-submit" type="button" class="btn btn-primary btn-lg"	data-dismiss="modal">ตกลง</button>

@@ -91,10 +91,6 @@
 														 }
 							
 													}?>
-															<!-- <tr class="success">
-																<tr class="info">
-																	<tr class="warning">
-																		<tr class="danger"> -->
 														</tbody>
 													</table>
 												</div>

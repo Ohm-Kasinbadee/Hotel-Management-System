@@ -24,7 +24,7 @@ class FormCustomer2_controller extends CI_Controller {
 
 		$this->load->model('FormCustomer2Model');
 		$this->FormCustomer2Model->getdatares();
-		 $this->load->view('FormCustomer3');
+		$this->load->view('FormCustomer3');
 	}
 
 	function test(){

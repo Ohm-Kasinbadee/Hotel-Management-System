@@ -8,8 +8,8 @@ class EmployeeAddModel extends CI_Model {
 
         public function getdataemp(){
 
-            $EMP_ID = $this->input->post('IDemp');
-            $POSITION_POS_ID = $this->input->post('positionemp');
+            // $EMP_ID = $this->input->post('IDemp');
+            $POS_ID = $this->input->post('positionemp');
             $EMP_FNAME = $this->input->post('Fnameemp');
             $EMP_LNAME = $this->input->post('Lnameemp');
             $EMP_PHONE = $this->input->post('Telemp');
@@ -21,12 +21,23 @@ class EmployeeAddModel extends CI_Model {
             $EMP_DATESTARTWORK = $this->input->post('dateemp');
             $EMP_ADDRESS = $this->input->post('addressemp');
 
-            $query = $this->db->query("INSERT INTO employee (EMP_ID, POSITION_POS_ID, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_EMAIL, 
+            $query = $this->db->query("INSERT INTO employee ( POS_ID, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_EMAIL, 
                                                    EMP_EDUCATION, EMP_GENDER, EMP_SALARY, EMP_BIRTHDATE, EMP_DATESTARTWORK, EMP_ADDRESS)
-                                       VALUES('$EMP_ID', '$POSITION_POS_ID', '$EMP_FNAME', '$EMP_LNAME', '$EMP_PHONE',
+                                       VALUES( '$POS_ID', '$EMP_FNAME', '$EMP_LNAME', '$EMP_PHONE',
                                               '$EMP_EMAIL', '$EMP_EDUCATION', '$EMP_GENDER', '$EMP_SALARY', 
                                               '$EMP_BIRTHDATE', '$EMP_DATESTARTWORK', '$EMP_ADDRESS')"); // session               
         //     print_r($query);
         }
+
+        public function dataemp(){
+            $query = $this->db->query("SELECT * FROM position "); // session
+            return $query->result_array();
+        }
+
+        public function idcheck(){
+            $query = $this->db->query("SELECT COUNT(EMP_ID) FROM employee"); 
+            return $query->result_array();
+        }
+    
 
 }
