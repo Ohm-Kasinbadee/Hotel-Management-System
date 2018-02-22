@@ -54,6 +54,53 @@
 				<hr />
 
 				<!-- ************************************ เขียนโปรแกรม ************************************ -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-heading text-center" style="font-size:25px">
+								รายชื่อพนักงาน
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>ชื่อ</th>
+												<th>นามสกุล</th>
+												<th>วันที่</th>
+												<th>เวลาเข้างาน</th>
+												<th>เวลาออกงาน</th>
+												<th>ชั่วโมงการทำงาน</th>
+												<th>อัพเดท</th>
+											</tr>
+										</thead>
+										<tbody>
+										<?php if($working != null)
+                  											foreach($working as $key => $row) :?>
+                    										<tr>
+                    										<td> <?php echo $row["EMP_ID"] ?></td>
+															<td> <?php echo $row["EMP_FNAME"] ?></td>
+															<td> <?php echo $row["EMP_LNAME"] ?></td>
+                    										<td> <?php echo $row["WOR_DATEWORK"] ?></td>
+															<td> <?php echo $row["WOR_TIMEWORK"] ?> </td>
+															<td> <?php echo $row["WOR_TIMEOUT"] ?> </td>
+															<td> <?php echo $row["test"] ?> </td>
+															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/TimeTableUpdate_controller?empid='.$row["EMP_ID"])?>'>
+															<i class='icon-cog '></i> Update</a></div> </td>
+														 <?php endforeach ?>
+										</tbody>
+									</table>
+									<p>
+									<a href="<?php echo base_url('index.php/TimeTableAdd_controller')?>"><button class="btn btn-success"><i class="icon-plus icon-white"></i> Add_TimeTable</button></a>
+									<!-- <a href="#"><button class="btn btn-danger"><i class="icon-remove  icon-white"></i> Delete</button></a> -->
+								</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>	
 
 
 

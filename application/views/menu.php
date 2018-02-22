@@ -101,6 +101,10 @@
 					<a href="<?php echo base_url('index.php/TimeTable_controller')?>">
 						<i class="icon-angle-right"></i> การเข้างาน </a>
 				</li>
+				<li>
+					<a href="<?php echo base_url('index.php/leaving_controller')?>">
+						<i class="icon-angle-right"></i> การลา </a>
+				</li>
 			</ul>
 		</li>
 

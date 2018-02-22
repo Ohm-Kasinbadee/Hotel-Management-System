@@ -178,7 +178,7 @@
 					</div>
 
 					<div class="form-actions no-margin-bottom" style="text-align:center;">
-						<a id="comment_submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#notificationModal">ยืนยัน</a>
+						<input type="submit" value="ยืนยัน" class="btn btn-primary btn-lg" />
 						<a href="<?php echo base_url('index.php/EmployeeList_controller')?>" class="btn btn-danger btn-lg" >ยกเลิก</a>
 		
 
@@ -199,31 +199,13 @@
 
 	<!-- Modal -->
 
-	<div class="modal" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">บันทึกสำเร็จ</h4>
-				</div>
-				<div class="modal-body" >
-					<span style="font-size:1000%; color:green "  ><i class="icon-ok-circle "></i></span>
-				</div>
-				<div class="modal-footer">
-					<button  id="modal-submit" type="button" class="btn btn-primary btn-lg"	data-dismiss="modal">ตกลง</button>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	</div>
-
 	<script>
 		$('#modal-submit').click(function () {
 			$('#block-validate').submit();
 		});
 
 		</script>
+
 
 	<!-- End Modal  -->
 
@@ -239,19 +221,11 @@
 	<script src="<?php echo base_url('assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/js/validationInit.js')?>"></script>
 	<script>
-		$(document).ready(function () {
-			$('#dataTables-example').dataTable();
-		});
-
-	</script>
+        $(function () { formValidation(); });
+        </script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 
-	<!-- Javascript -->
-	<script src="<?php echo base_url('assets/js/jquery-1.11.1.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/js/jquery.	backstretch.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/js/retina-1.1.0.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/js/scripts.js')?>"></script>
+	
 </body>
 <!-- END BODY -->
 

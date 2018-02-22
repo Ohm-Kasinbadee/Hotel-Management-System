@@ -77,6 +77,7 @@
 								<label class="control-label col-lg-4">ชื่อ :</label>
 								<div class="col-lg-5">
 									<input type="text" id="Fnameemp" name="Fnameemp" class="form-control" placeholder="นาย/นาง/นางสาว/.."  value="<?php echo $employee[0]['EMP_FNAME'] ?>" required />
+									<input type="hidden" id="empid" name="empid" class="form-control"   value="<?php echo $employee[0]['EMP_ID'] ?>" required />
 								</div>
 							</div>
 
@@ -121,10 +122,10 @@
 							<div class="form-group ">
 								<label class="control-label col-lg-4">เพศ :</label>
 								<label class="radio-inline col-lg-1">
-									<input type="radio" name="genderemp" id="genderemp" value="M" checked="checked" value="<?php echo $employee[0]['EMP_GENDER']?>" required />ชาย
+									<input type="radio" name="genderemp" id="genderemp" value="M"   <?php if($employee[0]['EMP_GENDER'] == 'M'){echo("checked");}?> required />ชาย
 								</label>
 								<label class="radio-inline col-lg-1">
-									<input type="radio" name="genderemp" id="genderemp" value="F" value="<?php echo $employee[0]['EMP_GENDER']?>" required />หญิง
+									<input type="radio" name="genderemp" id="genderemp" value="F"  <?php if($employee[0]['EMP_GENDER'] == 'F'){echo("checked");}?> required />หญิง
 								</label>
 							</div>
 
@@ -137,6 +138,7 @@
 									<option <?php if($employee[0]['EMP_SALARY'] == '10000.00'){echo("selected");}?>>10000.00</option>
 									<option <?php if($employee[0]['EMP_SALARY'] == '15000.00'){echo("selected");}?>>15000.00</option>
 									</select>
+									
 								</div>
 							</div>
 
@@ -144,6 +146,7 @@
 								<label class="control-label col-lg-4">วันเกิด :</label>
 								<div class="col-lg-5">
 									<input type="date" id="birthdayemp" name="birthdayemp" class="form-control" value="<?php echo $employee[0]['EMP_BIRTHDATE']?>" required />
+									
 								</div>
 							</div>
 
@@ -151,12 +154,17 @@
 								<label class="control-label col-lg-4">ตำแหน่ง :</label>
 								<div class="col-lg-5">
 									<select class="form-control" name="positionemp">
-									<option <?php if($employee[0]['POS_ID'] == '001'){echo("selected");}?>>แม่บ้าน</option>
-									<option <?php if($employee[0]['POS_ID'] == '002'){echo("selected");}?>>พ่อบ้าน</option>
-									<option <?php if($employee[0]['POS_ID'] == '003'){echo("selected");}?>>แม่ครัว</option>
-									<option <?php if($employee[0]['POS_ID'] == '004'){echo("selected");}?>>คนงาน</option>
-									<option <?php if($employee[0]['POS_ID'] == '005'){echo("selected");}?>>พนักงานตอนรับ</option>
-									<option <?php if($employee[0]['POS_ID'] == '006'){echo("selected");}?>>เด็กเสริฟ</option>
+									<?php if($position != null) 
+                  				foreach($position as $key => $row) :?>
+								  <?php	if($employee[0]['POS_ID'] == $row['POS_ID'] ):?>
+										<option value="<?php echo $row['POS_ID'] ?>" selected> 
+											<?php echo $row['POS_NAME'] ?> </option>
+								  <?php else : ?>
+										  <option value="<?php echo $row['POS_ID'] ?>">
+											<?php echo $row['POS_NAME'] ?> </option>
+											<?php endif ?>
+										<?php endforeach ?>
+										
 									</select>
 								</div>
 							</div>
@@ -177,7 +185,7 @@
 					</div>
 
 					<div class="form-actions no-margin-bottom" style="text-align:center;">
-						<a id="comment_submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#notificationModal">ยืนยัน</a>
+						<input type="submit" value="ยืนยัน" class="btn btn-primary btn-lg" />
 						<a href="<?php echo base_url('index.php/EmployeeList_controller')?>" class="btn btn-danger btn-lg" >ยกเลิก</a>
 		
 
@@ -197,32 +205,13 @@
 	<!--END MAIN WRAPPER -->
 
 	<!-- Modal -->
-
-	<div class="modal" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">แก้ไขสำเร็จ</h4>
-				</div>
-				<div class="modal-body" >
-					<span style="font-size:1000%; color:green " ><i class="icon-ok-circle "></i></span>
-				</div>
-				<div class="modal-footer">
-					<button  id="modal-submit" type="button" class="btn btn-primary btn-lg"	data-dismiss="modal">ตกลง</button>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	</div>
-
 	<script>
 		$('#modal-submit').click(function () {
 			$('#block-validate').submit();
 		});
 
 		</script>
+
 
 	<!-- End Modal  -->
 
@@ -238,19 +227,9 @@
 	<script src="<?php echo base_url('assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/js/validationInit.js')?>"></script>
 	<script>
-		$(document).ready(function () {
-			$('#dataTables-example').dataTable();
-		});
-
-	</script>
+        $(function () { formValidation(); });
+        </script>
 	<!-- END PAGE LEVEL SCRIPTS -->
-
-	<!-- Javascript -->
-	<script src="<?php echo base_url('assets/js/jquery-1.11.1.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/js/jquery.	backstretch.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/js/retina-1.1.0.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/js/scripts.js')?>"></script>
 </body>
 <!-- END BODY -->
 

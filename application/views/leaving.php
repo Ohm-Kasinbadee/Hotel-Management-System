@@ -48,7 +48,7 @@
 			<div class="inner">
 				<div class="row">
 					<div class="col-lg-12">
-						<h2> รายชื่อพนักงาน </h2>
+						<h2> การลา </h2>
 					</div>
 				</div>
 				<hr />
@@ -58,7 +58,7 @@
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading text-center" style="font-size:25px">
-								รายชื่อพนักงาน
+								รายชื่อพนักงาน การลา
 							</div>
 							<div class="panel-body">
 								<div class="table-responsive">
@@ -67,35 +67,33 @@
 											<tr>
 												<th>ID</th>
 												<th>ชื่อ</th>
-												<th>นามสกุล	</th>
-												<th>ตำแหน่ง</th>
-												<th>เบอร์โทร</th>
-												<th>เงินเดือน</th>
-												<th>ข้อมูลพนักงาน</th>
-												<th>อัพเดท</th>
+												<th>นามสกุล</th>
+												<th>ประเภทการลา</th>
+												<th>วันที่เริ่ม</th>
+												<th>วันที่จบ</th>
+                                                <!-- <th>จำนวนวัน</th> -->
+                                                <th>หมายเหตุ</th>
+												<th>อัพเดด</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php if($employee != null)
-                  											foreach($employee as $key => $row) :?>
+										<?php if($leaving != null)
+                  											foreach($leaving as $key => $row) :?>
                     										<tr>
                     										<td> <?php echo $row["EMP_ID"] ?></td>
                     										<td> <?php echo $row["EMP_FNAME"] ?></td>
 															<td> <?php echo $row["EMP_LNAME"] ?> </td>
-															<td> <?php echo $row["POS_NAME"] ?> </td>
-															<td> <?php echo $row["EMP_PHONE"] ?> </td>
-															<td> <?php echo $row["EMP_SALARY"] ?> </td>
-															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/EmployeeUpdate_controller?empid='.$row["EMP_ID"])?>'>
-															<i class='icon-cog '></i> คลิก</a></div> </td>
-															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/EmployeeUpdate_controller?empid='.$row["EMP_ID"])?>'>
+															<td> <?php echo $row["TYL_NAME"] ?> </td>
+															<td> <?php echo $row["LEA_DATESTART"] ?> </td>
+															<td> <?php echo $row["LEA_DATEEND"] ?> </td>
+															<td> <?php echo $row["LEA_ETC"] ?> </td>
+															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/leavingUpdate_controller?empid='.$row["EMP_ID"])?>'>
 															<i class='icon-cog '></i> Update</a></div> </td>
-
 														 <?php endforeach ?>
 										</tbody>
 									</table>
 									<p>
-									<a href="<?php echo base_url('index.php/EmployeeAdd_controller')?>"><button class="btn btn-success"><i class="icon-plus icon-white"></i> Add</button></a>
-									<!-- <a href="#"><button class="btn btn-danger"><i class="icon-remove  icon-white"></i> Delete</button></a> -->
+									<a href="<?php echo base_url('index.php/leavingAdd_controller')?>"><button class="btn btn-success"><i class="icon-plus icon-white"></i> Add_Leaving</button></a>
 								</p>
 								</div>
 							</div>

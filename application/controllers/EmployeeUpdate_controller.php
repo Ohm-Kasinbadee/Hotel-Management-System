@@ -7,8 +7,10 @@ class EmployeeUpdate_controller extends CI_Controller {
 	{
 		$empid = $this->input->get('empid');
 		$this->load->model('EmployeeUpdateModel');	
+		$dataget = $this->EmployeeUpdateModel->get();
 		$datas = $this->EmployeeUpdateModel->getdata($empid);
 		$dataShowemp['employee'] = $datas;
+		$dataShowemp['position'] = $dataget;
 
     	$this->load->view('EmployeeUpdate',$dataShowemp);
 	

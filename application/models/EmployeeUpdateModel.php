@@ -32,11 +32,16 @@ class EmployeeUpdateModel extends CI_Model {
                 $EMP_DATESTARTWORK = $this->input->post('dateemp');
                 $EMP_ADDRESS = $this->input->post('addressemp');
     
-                $query = $this->db->query("UPDATE employee SET EMP_ID = '$EMP_ID', EMP_FNAME = '$EMP_FNAME', EMP_LNAME = '$EMP_LNAME', EMP_PHONE = '$EMP_PHONE', EMP_EMAIL = '$EMP_EMAIL', 
+                $query = $this->db->query("UPDATE employee SET EMP_ID = '$EMP_ID', POS_ID = '$POS_ID', EMP_FNAME = '$EMP_FNAME', EMP_LNAME = '$EMP_LNAME', EMP_PHONE = '$EMP_PHONE', EMP_EMAIL = '$EMP_EMAIL', 
                                                        EMP_EDUCATION = '$EMP_EDUCATION', EMP_GENDER = '$EMP_GENDER', EMP_SALARY = '$EMP_SALARY', EMP_BIRTHDATE = '$EMP_BIRTHDATE',
                                                         EMP_DATESTARTWORK = '$EMP_DATESTARTWORK', EMP_ADDRESS = '$EMP_ADDRESS'
                                                        WHERE EMP_ID = '$EMP_ID'"); // session               
-            //     print_r($query);
+                // print_r($query);
+            }
+
+            public function get(){
+                $query = $this->db->query("SELECT * FROM position "); // session
+                return $query->result_array();
             }
 
         
