@@ -31,11 +31,27 @@
 
 	<!-- PAGE LEVEL STYLES -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/validationengine/css/validationEngine.jquery.css')?>" />
 	<link href="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.css')?>" rel="stylesheet" />
 	<!-- END PAGE LEVEL  STYLES -->
+
+	<!-- GLOBAL STYLES -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.css')?>" />
+	<!--END GLOBAL STYLES -->
+
+	<!-- PAGE LEVEL STYLES -->
+	<link href="<?php echo base_url('assets/css/jquery-ui.css')?>" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/uniform/themes/default/css/uniform.default.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/inputlimiter/jquery.inputlimiter.1.0.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/chosen/chosen.min.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/colorpicker/css/colorpicker.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/tagsinput/jquery.tagsinput.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/daterangepicker/daterangepicker-bs3.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/datepicker/css/datepicker.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/timepicker/css/bootstrap-timepicker.min.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/switch/static/stylesheets/bootstrap-switch.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/validationengine/css/validationEngine.jquery.css')?>" />
+	<!-- END PAGE LEVEL  STYLES -->
+
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -143,11 +159,15 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-lg-4">วันเกิด :</label>
-								<div class="col-lg-5">
-									<input type="date" id="birthdayemp" name="birthdayemp" class="form-control" value="<?php echo $employee[0]['EMP_BIRTHDATE']?>" required />
-									
-								</div>
+								<label class="control-label col-lg-4" for="dp2">วันเกิด :</label>
+									<div class="col-lg-3">
+                           				<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
+                              				data-date-format="dd-mm-yyyy">
+											<input class="form-control" type="text" value="<?php echo $employee[0]['EMP_BIRTHDATE']?>" readonly=""
+											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name="birthdayemp" required />
+                                			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
+                            			</div>
+                        			</div>	
 							</div>
 
 							<div class="form-group">
@@ -170,10 +190,15 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-lg-4">วันที่ทำงาน :</label>
-								<div class="col-lg-5">
-									<input type="date" id="dateemp" name="dateemp" class="form-control"value="<?php echo $employee[0]['EMP_DATESTARTWORK']?>" required />
-								</div>
+								<label class="control-label col-lg-4" for="dp2">วันที่ทำงาน :</label>
+									<div class="col-lg-3">
+                           				<div class="input-group input-append date" id="dp5" data-date="12-02-2012"
+                              				data-date-format="dd-mm-yyyy">
+											<input class="form-control" type="text" value="<?php echo $employee[0]['EMP_DATESTARTWORK']?>" readonly=""
+											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name="dateemp" required />
+                                			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
+                            			</div>
+                        			</div>	
 							</div>
 
 							<div class="form-group ">
@@ -221,15 +246,37 @@
 	<script src="<?php echo base_url('assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js')?>"></script>
 	<!-- END GLOBAL SCRIPTS -->
 
-	<!-- PAGE LEVEL SCRIPTS -->
+	  <!-- PAGE LEVEL SCRIPTS -->
+	<script src="<?php echo base_url('assets/js/validationInit.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/validationengine/js/jquery.validationEngine.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js')?>"></script>
-	<script src="<?php echo base_url('assets/js/validationInit.js')?>"></script>
+	<script src="<?php echo base_url('assets/js/jquery-ui.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/uniform/jquery.uniform.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/inputlimiter/jquery.inputlimiter.1.3.1.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/chosen/chosen.jquery.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/colorpicker/js/bootstrap-colorpicker.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/tagsinput/jquery.tagsinput.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/validVal/js/jquery.validVal.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/daterangepicker/daterangepicker.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/daterangepicker/moment.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/datepicker/js/bootstrap-datepicker.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/timepicker/js/bootstrap-timepicker.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/switch/static/js/bootstrap-switch.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/jquery.dualListbox-1.3/jquery.dualListBox-1.3.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/autosize/jquery.autosize.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/jasny/js/bootstrap-inputmask.js')?>"></script>
+	<script src="<?php echo base_url('assets/js/formsInit.js')?>"></script>
+	<script>
+		$(function () {
+			formInit();
+		});
+	</script>
 	<script>
         $(function () { formValidation(); });
         </script>
 	<!-- END PAGE LEVEL SCRIPTS -->
+
 </body>
 <!-- END BODY -->
 
