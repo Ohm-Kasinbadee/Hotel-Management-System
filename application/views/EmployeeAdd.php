@@ -30,12 +30,36 @@
 	<!--END GLOBAL STYLES -->
 
 	<!-- PAGE LEVEL STYLES -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/validationengine/css/validationEngine.jquery.css')?>" />
-	<link href="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.css')?>" rel="stylesheet" />
+	<link href="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.css')?>" rel="stylesheet" /> -->
 	<!-- END PAGE LEVEL  STYLES -->
+
+	    <!-- GLOBAL STYLES -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.css')?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css')?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/MoneAdmin.css')?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/Font-Awesome/css/font-awesome.css')?>" />
+    <!--END GLOBAL STYLES --> 
+
+    <!-- PAGE LEVEL STYLES -->
+    
+	 <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/uniform/themes/default/css/uniform.default.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/inputlimiter/jquery.inputlimiter.1.0.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/chosen/chosen.min.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/colorpicker/css/colorpicker.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/tagsinput/jquery.tagsinput.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/daterangepicker/daterangepicker-bs3.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/datepicker/css/datepicker.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/timepicker/css/bootstrap-timepicker.min.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/switch/static/stylesheets/bootstrap-switch.css')?>" />
+   
+    <!-- END PAGE LEVEL  STYLES -->
+
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -91,7 +115,7 @@
 							<div class="form-group">
 								<label class="control-label col-lg-4">เบอร์โทร :</label>
 								<div class="col-lg-5">
-									<input type="text" id="Telemp" name="Telemp" class="form-control" maxlength="10" pattern="([0]{1})([0-9]{9})" placeholder="+66"
+									<input type="text" id="Telemp" name="Telemp" class="form-control"  data-mask="(999) 999-9999"  placeholder="+66"
 									required />
 								</div>
 							</div>
@@ -224,6 +248,30 @@
         $(function () { formValidation(); });
         </script>
 	<!-- END PAGE LEVEL SCRIPTS -->
+
+	  <!-- PAGE LEVEL SCRIPT-->
+	<script src="<?php echo base_url('assets/js/jquery-ui.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/uniform/jquery.uniform.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/inputlimiter/jquery.inputlimiter.1.3.1.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/chosen/chosen.jquery.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/colorpicker/js/bootstrap-colorpicker.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/tagsinput/jquery.tagsinput.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/validVal/js/jquery.validVal.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/daterangepicker/daterangepicker.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/daterangepicker/moment.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/datepicker/js/bootstrap-datepicker.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/timepicker/js/bootstrap-timepicker.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/switch/static/js/bootstrap-switch.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/jquery.dualListbox-1.3/jquery.dualListBox-1.3.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/autosize/jquery.autosize.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/jasny/js/bootstrap-inputmask.js')?>"></script>
+       <script src="assets/js/formsInit.js"></script>
+        <script>
+            $(function () { formInit(); });
+        </script>
+        
+     <!--END PAGE LEVEL SCRIPT-->
+     
 
 	
 </body>

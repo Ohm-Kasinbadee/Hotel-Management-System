@@ -70,7 +70,7 @@
 							<div class="form-group">
 						<label class="control-label col-lg-4">ID :</label>
 						<div class="col-lg-5">
-							<label class="control-label col-lg-1"><?php echo $employee[0]['EMP_ID'] ?></label>
+							<label class="control-label col-lg-1"><?php echo $working[0]['EMP_ID'] ?></label>
 						</div>
 					</div>
 
@@ -86,31 +86,31 @@
 								<label class="control-label col-lg-4">เวลาเข้าทำงาน :</label>
 								<div class="col-lg-5">
 									<select class="form-control" id="WORTIMEWORK" name="WORTIMEWORK" required>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '00:00:00'){echo("selected");}?>>00.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '01:00:00'){echo("selected");}?>>01.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '02:00:00'){echo("selected");}?>>02.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '03:00:00'){echo("selected");}?>>03.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '04:00:00'){echo("selected");}?>>04.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '05:00:00'){echo("selected");}?>>05.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '06:00:00'){echo("selected");}?>>06.00 น.</option>
-                                    <option <?php if($employee[0]['WOR_TIMEWORK'] == '07:00:00'){echo("selected");}?>>07.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '08:00:00'){echo("selected");}?>>08.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '09:00:00'){echo("selected");}?>>09.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '10:00:00'){echo("selected");}?>>10.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '11:00:00'){echo("selected");}?>>11.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '12:00:00'){echo("selected");}?>>12.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '13:00:00'){echo("selected");}?>>13.00 น.</option>
-                                    <option <?php if($employee[0]['WOR_TIMEWORK'] == '14:00:00'){echo("selected");}?>>14.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '15:00:00'){echo("selected");}?>>15.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '16:00:00'){echo("selected");}?>>16.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '17:00:00'){echo("selected");}?>>17.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '18:00:00'){echo("selected");}?>>18.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '19:00:00'){echo("selected");}?>>19.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '20:00:00'){echo("selected");}?>>20.00 น.</option>
-                                    <option <?php if($employee[0]['WOR_TIMEWORK'] == '21:00:00'){echo("selected");}?>>21.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '22:00:00'){echo("selected");}?>>22.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '23:00:00'){echo("selected");}?>>23.00 น.</option>
-									<option <?php if($employee[0]['WOR_TIMEWORK'] == '24:00:00'){echo("selected");}?>>24.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '00:00:00'){echo("selected");}?>>00.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '01:00:00'){echo("selected");}?>>01.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '02:00:00'){echo("selected");}?>>02.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '03:00:00'){echo("selected");}?>>03.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '04:00:00'){echo("selected");}?>>04.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '05:00:00'){echo("selected");}?>>05.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '06:00:00'){echo("selected");}?>>06.00 น.</option>
+                                    <option <?php if($working[0]['WOR_TIMEWORK'] == '07:00:00'){echo("selected");}?>>07.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '08:00:00'){echo("selected");}?>>08.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '09:00:00'){echo("selected");}?>>09.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '10:00:00'){echo("selected");}?>>10.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '11:00:00'){echo("selected");}?>>11.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '12:00:00'){echo("selected");}?>>12.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '13:00:00'){echo("selected");}?>>13.00 น.</option>
+                                    <option <?php if($working[0]['WOR_TIMEWORK'] == '14:00:00'){echo("selected");}?>>14.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '15:00:00'){echo("selected");}?>>15.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '16:00:00'){echo("selected");}?>>16.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '17:00:00'){echo("selected");}?>>17.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '18:00:00'){echo("selected");}?>>18.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '19:00:00'){echo("selected");}?>>19.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '20:00:00'){echo("selected");}?>>20.00 น.</option>
+                                    <option <?php if($working[0]['WOR_TIMEWORK'] == '21:00:00'){echo("selected");}?>>21.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '22:00:00'){echo("selected");}?>>22.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '23:00:00'){echo("selected");}?>>23.00 น.</option>
+									<option <?php if($working[0]['WOR_TIMEWORK'] == '24:00:00'){echo("selected");}?>>24.00 น.</option>
 									</select>
 								</div>
 								</label>

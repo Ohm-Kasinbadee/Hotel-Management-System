@@ -95,6 +95,10 @@
                 required: true,
                 range: [5, 16]
             },
+            phone: {
+                required: true,
+                
+            }
         },
         errorClass: 'help-block',
         errorElement: 'span',
