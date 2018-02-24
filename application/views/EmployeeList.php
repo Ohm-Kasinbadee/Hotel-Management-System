@@ -71,7 +71,6 @@
 												<th>ตำแหน่ง</th>
 												<th>เบอร์โทร</th>
 												<th>เงินเดือน</th>
-												<th>ข้อมูลพนักงาน</th>
 												<th>อัพเดท</th>
 											</tr>
 										</thead>
@@ -85,8 +84,6 @@
 															<td> <?php echo $row["POS_NAME"] ?> </td>
 															<td> <?php echo $row["EMP_PHONE"] ?> </td>
 															<td> <?php echo $row["EMP_SALARY"] ?> </td>
-															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/EmployeeUpdate_controller?empid='.$row["EMP_ID"])?>'>
-															<i class='icon-cog '></i> คลิก</a></div> </td>
 															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/EmployeeUpdate_controller?empid='.$row["EMP_ID"])?>'>
 															<i class='icon-cog '></i> Update</a></div> </td>
 

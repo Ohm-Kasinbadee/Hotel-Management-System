@@ -16,7 +16,7 @@ class TimeTableAdd_controller extends CI_Controller {
 		$this->load->model('TimeTableAddModel');
 		$this->TimeTableAddModel->getdataemp();
 		
-		 //redirect('TimeTable_controller');
+		 redirect('TimeTable_controller');
 	}
 	
 }

@@ -87,8 +87,7 @@
 							<div class="form-group">
 								<label class="control-label col-lg-4" for="dp2">วันที่ :</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" id="dp2" name="WOR_DATEWORK"
-									/>
+									<input type="text" class="form-control" value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" id="dp2" name="WOR_DATEWORK" required/>
 								</div>
 							</div>
 
@@ -96,11 +95,12 @@
 								<label class="control-label col-lg-4">เวลาเข้างาน :</label>
 								<div class="col-lg-3">
 									<div class="input-group bootstrap-timepicker">
-										<input class="timepicker-24 form-control" type="text" id="WOR_TIMEWORK" name="WOR_TIMEWORK" />
+										<input class="timepicker-24 form-control" type="text" id="WOR_TIMEWORK" name="WOR_TIMEWORK" onchange="checktime()" required/>										
 										<span class="input-group-addon add-on">
 											<i class="icon-time"></i>
 										</span>
 									</div>
+									<span id="start" style="color:red"></span>
 								</div>
 							</div>
 
@@ -108,18 +108,19 @@
 								<label class="control-label col-lg-4">เวลาออกงาน :</label>
 								<div class="col-lg-3">
 									<div class="input-group bootstrap-timepicker">
-										<input class="timepicker-24 form-control" type="text" id="WOR_TIMEOUT" name="WOR_TIMEOUT" />
+										<input class="timepicker-24 form-control" type="text" id="WOR_TIMEOUT" name="WOR_TIMEOUT" onchange="checktime()" required/>
 										<span class="input-group-addon add-on">
 											<i class="icon-time"></i>
 										</span>
 									</div>
+									<span id="end" style="color:red"></span>
 								</div>
 							</div>
 
 					</div>
 
 					<div class="form-actions no-margin-bottom" style="text-align:center;">
-						<input type="submit" value="ยืนยัน" class="btn btn-primary btn-lg" />
+						<input id="submit" type="submit" value="ยืนยัน" class="btn btn-primary btn-lg" />
 						<a href="<?php echo base_url('index.php/TimeTable_controller')?>" class="btn btn-danger btn-lg">ยกเลิก</a>
 
 
@@ -147,8 +148,24 @@
 			$('#block-validate').submit();
 		});
 
-	</script>
-
+		function checktime(){
+			timestart = document.getElementById('WOR_TIMEWORK').value
+			timeend = document.getElementById('WOR_TIMEOUT').value
+			time1= new Date("2014-02-02 "+timestart);
+			time2= new Date("2014-02-02 "+timeend);
+			if(timestart != "" && timeend != ""){			
+				if(time2 <= time1 ){
+					document.getElementById("start").innerHTML = "โปรดกรอกรูปแบบเวลาให้ถูกต้อง"; 
+					document.getElementById("end").innerHTML = "โปรดกรอกรูปแบบเวลาให้ถูกต้อง"; 
+					document.getElementById("submit").disabled = true;
+				}else{
+					document.getElementById("start").innerHTML = ""; 
+					document.getElementById("end").innerHTML = ""; 
+					document.getElementById("submit").disabled = false;
+				}
+			}
+		}
+</script>
 
 	<!-- End Modal  -->
 
@@ -185,9 +202,9 @@
 
 	</script>
 	<script>
-		$(function () {
-			formValidation();
-		});
+		// $(function () {
+		// 	formValidation();
+		// });
 
 	</script>
 	<!-- END PAGE LEVEL SCRIPTS -->
