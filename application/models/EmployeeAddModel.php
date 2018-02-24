@@ -18,14 +18,16 @@ class EmployeeAddModel extends CI_Model {
             $EMP_GENDER = $this->input->post('genderemp');
             $EMP_SALARY = $this->input->post('salaryemp');
             $EMP_BIRTHDATE = $this->input->post('birthdayemp');
+            $์NEW_BIRTHDATE = date("Y-m-d", strtotime($EMP_BIRTHDATE));
             $EMP_DATESTARTWORK = $this->input->post('dateemp');
+            $์NEW_DATESTARTWORK = date("Y-m-d", strtotime($EMP_DATESTARTWORK));
             $EMP_ADDRESS = $this->input->post('addressemp');
 
             $query = $this->db->query("INSERT INTO employee ( POS_ID, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_EMAIL, 
                                                    EMP_EDUCATION, EMP_GENDER, EMP_SALARY, EMP_BIRTHDATE, EMP_DATESTARTWORK, EMP_ADDRESS)
                                        VALUES( '$POS_ID', '$EMP_FNAME', '$EMP_LNAME', '$EMP_PHONE',
                                               '$EMP_EMAIL', '$EMP_EDUCATION', '$EMP_GENDER', '$EMP_SALARY', 
-                                              '$EMP_BIRTHDATE', '$EMP_DATESTARTWORK', '$EMP_ADDRESS')"); // session               
+                                              '$์NEW_BIRTHDATE', '$์NEW_DATESTARTWORK', '$EMP_ADDRESS')"); // session               
         //     print_r($query);
         }
 

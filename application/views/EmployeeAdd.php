@@ -37,17 +37,16 @@
 	<link href="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.css')?>" rel="stylesheet" /> -->
 	<!-- END PAGE LEVEL  STYLES -->
 
-	    <!-- GLOBAL STYLES -->
+	   <!-- GLOBAL STYLES -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.css')?>" />
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css')?>" />
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>" />
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/MoneAdmin.css')?>" />
-    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/Font-Awesome/css/font-awesome.css')?>" />
-    <!--END GLOBAL STYLES --> 
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/main.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/MoneAdmin.css')?>" />
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/Font-Awesome/css/font-awesome.css')?>" />
+	<!--END GLOBAL STYLES -->
 
-    <!-- PAGE LEVEL STYLES -->
-    
-	 <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+	<!-- PAGE LEVEL STYLES -->
+	<link href="<?php echo base_url('assets/css/jquery-ui.css')?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/uniform/themes/default/css/uniform.default.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/inputlimiter/jquery.inputlimiter.1.0.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/chosen/chosen.min.css')?>" />
@@ -57,8 +56,8 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/datepicker/css/datepicker.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/timepicker/css/bootstrap-timepicker.min.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/switch/static/stylesheets/bootstrap-switch.css')?>" />
-   
-    <!-- END PAGE LEVEL  STYLES -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/validationengine/css/validationEngine.jquery.css')?>" />
+	<!-- END PAGE LEVEL  STYLES -->
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -115,7 +114,7 @@
 							<div class="form-group">
 								<label class="control-label col-lg-4">เบอร์โทร :</label>
 								<div class="col-lg-5">
-									<input type="text" id="Telemp" name="Telemp" class="form-control"  data-mask="(999) 999-9999"  placeholder="+66"
+									<input type="text" id="Telemp" name="Telemp" class="form-control"  data-mask="9999999999"  placeholder="+66"
 									required />
 								</div>
 							</div>
@@ -166,10 +165,15 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-lg-4">วันเกิด :</label>
-								<div class="col-lg-5">
-									<input type="date" id="birthdayemp" name="birthdayemp" class="form-control" required />
-								</div>
+								<label class="control-label col-lg-4" for="dp2">วันเกิด :</label>
+									<div class="col-lg-3">
+                           				<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
+                              				data-date-format="dd-mm-yyyy">
+											<input class="form-control" type="text" value="12-02-2012" readonly=""
+											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name="birthdayemp" required />
+                                			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
+                            			</div>
+                        			</div>	
 							</div>
 
 							<div class="form-group">
@@ -187,10 +191,15 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-lg-4">วันที่ทำงาน :</label>
-								<div class="col-lg-5">
-									<input type="date" id="dateemp" name="dateemp" class="form-control" required />
-								</div>
+								<label class="control-label col-lg-4" for="dp2">วันที่ทำงาน :</label>
+									<div class="col-lg-3">
+                           				<div class="input-group input-append date" id="dp5" data-date="12-02-2012"
+                              				data-date-format="dd-mm-yyyy">
+											<input class="form-control" type="text" value="12-02-2012" readonly=""
+											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name="dateemp" required />
+                                			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
+                            			</div>
+                        			</div>	
 							</div>
 
 							<div class="form-group ">
@@ -249,7 +258,10 @@
         </script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 
-	  <!-- PAGE LEVEL SCRIPT-->
+	  <!-- PAGE LEVEL SCRIPTS -->
+	<script src="<?php echo base_url('assets/plugins/validationengine/js/jquery.validationEngine.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/js/jquery-ui.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/uniform/jquery.uniform.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/inputlimiter/jquery.inputlimiter.1.3.1.min.js')?>"></script>
@@ -265,12 +277,13 @@
 	<script src="<?php echo base_url('assets/plugins/jquery.dualListbox-1.3/jquery.dualListBox-1.3.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/autosize/jquery.autosize.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/jasny/js/bootstrap-inputmask.js')?>"></script>
-       <script src="assets/js/formsInit.js"></script>
-        <script>
-            $(function () { formInit(); });
-        </script>
-        
-     <!--END PAGE LEVEL SCRIPT-->
+	<script src="<?php echo base_url('assets/js/formsInit.js')?>"></script>
+	<script>
+		$(function () {
+			formInit();
+		});
+	</script>
+	<!-- END PAGE LEVEL SCRIPTS -->
      
 
 	

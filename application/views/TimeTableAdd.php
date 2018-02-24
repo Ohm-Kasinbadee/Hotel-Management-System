@@ -204,13 +204,6 @@
 		$(function () {
 			formInit();
 		});
-
-	</script>
-	<script>
-		// $(function () {
-		// 	formValidation();
-		// });
-
 	</script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 

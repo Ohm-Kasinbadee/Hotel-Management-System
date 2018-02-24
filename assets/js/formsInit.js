@@ -72,6 +72,7 @@
     $('#dp2').datepicker();
     $('#dp3').datepicker();
     $('#dp3').datepicker();
+    $('#dp5').datepicker();
     $('#dpYears').datepicker();
     $('#dpMonths').datepicker();
 
