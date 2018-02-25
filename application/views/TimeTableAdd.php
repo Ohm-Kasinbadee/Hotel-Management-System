@@ -72,7 +72,7 @@
 
 							<div class="form-group">
 								<label class="control-label col-lg-4">ID :</label>
-								<div class="col-lg-5">
+								<div class="col-lg-3">
 									<select class="form-control" name="EMP_ID">
 										<?php if($idemployee != null) 
                   				foreach($idemployee as $key => $row) :?>
@@ -90,7 +90,7 @@
                            				<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
                               				data-date-format="dd-mm-yyyy">
 											<input class="form-control" type="text" value="12-02-2012" readonly=""
-											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name="WOR_DATEWORK" required />
+											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name="WORDATEWORK" required />
                                 			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
                             			</div>
                         			</div>	

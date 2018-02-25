@@ -18,15 +18,16 @@ class TimeTableUpdateModel extends CI_Model {
 
         public function updateemp(){
 
-                $EMP_ID = $this->input->post('EMPID');
+                $EMP_ID = $this->input->post('EMP_ID');
                 $WOR_DATEWORK = $this->input->post('WORDATEWORK');
+                $newDate = date("Y-m-d", strtotime($WOR_DATEWORK));
                 $WOR_TIMEWORK = $this->input->post('WORTIMEWORK');
                 $WOR_TIMEOUT = $this->input->post('WORTIMEOUT');
                 $WOR_HOUR = $this->input->post('WORHOUR');
     
-                $query = $this->db->query("UPDATE working SET EMP_ID = '$EMP_ID', WOR_DATEWORK = '$WOR_DATEWORK', WOR_TIMEWORK = '$WOR_TIMEWORK',
+                $query = $this->db->query("UPDATE working SET EMP_ID = '$EMP_ID', WOR_DATEWORK = '$newDate', WOR_TIMEWORK = '$WOR_TIMEWORK',
                                                          WOR_TIMEOUT = '$WOR_TIMEOUT', WOR_HOUR = '$WOR_HOUR'
-                                                       WHERE EMP_ID = '$EMP_ID'"); // session 
+                                                       WHERE EMP_ID = '$EMP_ID'"); // session                    
             }
 
             public function get(){
