@@ -68,7 +68,7 @@
 
 							<div class="form-group">
 								<label class="control-label col-lg-4">ID พนักงาน :</label>
-								<div class="col-lg-5">
+								<div class="col-lg-4">
 									<select class="form-control" name="EMP_ID">
 										<?php if($idemployee != null) 
                   				foreach($idemployee as $key => $row) :?>
@@ -81,7 +81,7 @@
 
 							<div class="form-group">
 								<label class="control-label col-lg-4">ประเภทการลา :</label>
-								<div class="col-lg-5">
+								<div class="col-lg-4">
 									<select class="form-control" id="TYL_NAME" name="TYL_NAME" required>
 										<option value="ลาป่วย">ลาป่วย</option>
 										<option value="ลากิจ">ลากิจ</option>
@@ -106,7 +106,7 @@
 
 								<div class="form-group ">
 									<label class="control-label col-lg-4">หมายเหตุ :</label>
-									<div class="col-lg-5">
+									<div class="col-lg-4">
 										<textarea class="form-control" rows="6" name="LEA_ETC" id="LEA_ETC" required></textarea>
 									</div>
 								</div>

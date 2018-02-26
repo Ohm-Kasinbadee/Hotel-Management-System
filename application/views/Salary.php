@@ -47,8 +47,8 @@
 
 			<div class="inner">
 				<div class="row">
-					<div class="col-lg-12">
-						<h2> การลา </h2>
+					<div class="col-lg-12 text-center" >
+						<h2> การจ่ายเงินเดือน </h2>
 					</div>
 				</div>
 				<hr />
@@ -57,9 +57,6 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="panel panel-default">
-							<div class="panel-heading text-center" style="font-size:25px">
-								รายชื่อพนักงาน การลา
-							</div>
 							<div class="panel-body">
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -68,33 +65,30 @@
 												<th>ID</th>
 												<th>ชื่อ</th>
 												<th>นามสกุล</th>
-												<th>ประเภทการลา</th>
-												<th>วันที่เริ่ม</th>
-												<th>วันที่จบ</th>
-                                                <th>จำนวนวัน</th>
-                                                <th>หมายเหตุ</th>
+												<th>วันที่มอบเงิน</th>
+												<th>จำนวน</th>
+												<th>รอบการจ่ายเงิน</th>
 												<th>อัพเดด</th>
 											</tr>
 										</thead>
 										<tbody>
-										<?php if($leaving != null)
-                  											foreach($leaving as $key => $row) :?>
+										<!-- <?php if($working != null)
+                  											foreach($working as $key => $row) :?>
                     										<tr>
                     										<td> <?php echo $row["EMP_ID"] ?></td>
-                    										<td> <?php echo $row["EMP_FNAME"] ?></td>
-															<td> <?php echo $row["EMP_LNAME"] ?> </td>
-															<td> <?php echo $row["TYL_NAME"] ?> </td>
-															<td> <?php echo $row["LEA_DATESTART"] ?> </td>
-															<td> <?php echo $row["LEA_DATEEND"] ?> </td>
-															<td> <?php echo $row["HOUR"] ?> </td>
-															<td> <?php echo $row["LEA_ETC"] ?> </td>
-															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/leavingUpdate_controller?empid='.$row["EMP_ID"])?>'>
+															<td> <?php echo $row["EMP_FNAME"] ?></td>
+															<td> <?php echo $row["EMP_LNAME"] ?></td>
+                    										<td> <?php echo $row["WOR_DATEWORK"] ?></td>
+															<td> <?php echo $row["WOR_TIMEWORK"] ?> </td>
+															<td> <?php echo $row["WOR_TIMEOUT"] ?> </td>
+															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/SalaryUpdate_controller?empid='.$row["EMP_ID"])?>'>
 															<i class='icon-cog '></i> Update</a></div> </td>
-														 <?php endforeach ?>
+														 <?php endforeach ?> -->
 										</tbody>
 									</table>
 									<p>
-									<a href="<?php echo base_url('index.php/leavingAdd_controller')?>"><button class="btn btn-success"><i class="icon-plus icon-white"></i> Add_Leaving</button></a>
+									<a href="<?php echo base_url('index.php/SalaryAdd_controller')?>"><button class="btn btn-success"><i class="icon-plus icon-white"></i> Add Salary</button></a>
+									<!-- <a href="#"><button class="btn btn-danger"><i class="icon-remove  icon-white"></i> Delete</button></a> -->
 								</p>
 								</div>
 							</div>
@@ -109,9 +103,16 @@
 	</div>
 	<!--END PAGE CONTENT -->
 
+
 	</div>
 
 	<!--END MAIN WRAPPER -->
+
+	<!-- FOOTER -->
+	<div id="footer">
+		<p>&copy; binarytheme &nbsp;2014 &nbsp;</p>
+	</div>
+	<!--END FOOTER -->
 	<!-- GLOBAL SCRIPTS -->
 	<script src="<?php echo base_url('assets/plugins/jquery-2.0.3.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js')?>"></script>

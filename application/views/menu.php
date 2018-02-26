@@ -105,6 +105,10 @@
 					<a href="<?php echo base_url('index.php/leaving_controller')?>">
 						<i class="icon-angle-right"></i> การลา </a>
 				</li>
+				<li>
+					<a href="<?php echo base_url('index.php/Salary_controller')?>">
+						<i class="icon-angle-right"></i> รอบการจ่ายเงินเดือน </a>
+				</li>
 			</ul>
 		</li>
 
