@@ -153,13 +153,11 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-lg-4">เงินเดือน :</label>
+								<label class="control-label col-lg-4">ค่าแรง / วัน :</label>
 								<div class="col-lg-5">
 									<select class="form-control" name="salaryemp">
-										<option value="6000.00">6000.00 THB</option>
-										<option value="8000.00">8000.00 THB</option>
-										<option value="10000.00">10000.00 THB</option>
-										<option value="15000.00">15000.00 THB</option>
+										<option value="250">250 THB / DAY</option>
+										<option value="9000.00">9000.00 THB / MONTH</option>
 									</select>
 								</div>
 							</div>

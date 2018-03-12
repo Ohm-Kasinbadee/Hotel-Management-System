@@ -67,7 +67,6 @@
 												<th>นามสกุล</th>
 												<th>วันที่มอบเงิน</th>
 												<th>จำนวน</th>
-												<th>รอบการจ่ายเงิน</th>
 												<th>อัพเดด</th>
 											</tr>
 										</thead>
@@ -81,6 +80,7 @@
                     										<td> <?php echo $row["WOR_DATEWORK"] ?></td>
 															<td> <?php echo $row["WOR_TIMEWORK"] ?> </td>
 															<td> <?php echo $row["WOR_TIMEOUT"] ?> </td>
+															<td> <?php echo $row["test"] ?> </td>
 															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/SalaryUpdate_controller?empid='.$row["EMP_ID"])?>'>
 															<i class='icon-cog '></i> Update</a></div> </td>
 														 <?php endforeach ?> -->

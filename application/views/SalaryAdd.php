@@ -16,26 +16,13 @@
 	<!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
+
 	<!-- GLOBAL STYLES -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/main.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/MoneAdmin.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/Font-Awesome/css/font-awesome.css')?>" />
-	<link rel="stylesheet" href="<?php echo base_url('http://fonts.googleapis.com/css?family=Roboto:400,100,300,500')?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css')?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/form-elements.css')?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
-
-	
-	<!--END GLOBAL STYLES -->
-
-	<!-- PAGE LEVEL STYLES -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link href="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.css')?>" rel="stylesheet" />
-	<!-- END PAGE LEVEL  STYLES -->
-
-	<!-- GLOBAL STYLES -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.css')?>" />
 	<!--END GLOBAL STYLES -->
 
 	<!-- PAGE LEVEL STYLES -->
@@ -61,18 +48,17 @@
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 
-<body >
+<body>
 
 	<!-- MAIN WRAPPER -->
-	<div id="wrap" >
+	<div id="wrap">
 
 		<!--PAGE CONTENT -->
 		<div>
-
 			<div class="inner">
 				<div class="row">
 					<div class="col-lg-12 text-center">
-						<h2> แก้ไขฟอร์มพนักงาน </h2>
+						<h2> ฟอร์มการจ่ายเงิน</h2>
 					</div>
 				</div>
 				<hr />
@@ -81,62 +67,62 @@
 				<div class="row">
 					</header>
 					<div id="collapseOne" class="accordion-body collapse in body">
-						<form action="<?php echo base_url('index.php/leavingUpdate_controller/updateemp')?>" class="form-horizontal" id="block-validate"
+						<form action="<?php echo base_url('index.php/TimeTableAdd_controller/getdataemp')?>" class="form-horizontal" id="block-validate"
 						method="post">
-							<div class="form-group">
-						<label class="control-label col-lg-4">ID :</label>
-						<div class="col-lg-5">
-						<input type="hidden" id="empid" name="empid" class="form-control"   value="<?php echo $leaving[0]['EMP_ID'] ?>" required />
-							<label class="control-label col-lg-1">
-								<?php echo $leaving[0]['EMP_ID'] ?>
-							</label>
-							
-						</div>
-					</div>
 
 							<div class="form-group">
-								<label class="control-label col-lg-4">ประเภทการลา :</label>
-								<div class="col-lg-4">
-									<select class="form-control" id="TYL_NAME" name="TYL_NAME" required>
-									<option <?php if($leaving[0]['TYL_NAME'] == 'ลาป่วย'){echo("selected");}?>>ลาป่วย</option>
-									<option <?php if($leaving[0]['TYL_NAME'] == 'ลากิจ'){echo("selected");}?>>ลากิจ</option>
-									<option <?php if($leaving[0]['TYL_NAME'] == 'ลาพักร้อน'){echo("selected");}?>>ลาพักร้อน</option>
-									<option <?php if($leaving[0]['TYL_NAME'] == 'ลาคลอด'){echo("selected");}?>>ลาคลอด</option>
+								<label class="control-label col-lg-4">ID :</label>
+								<div class="col-lg-3">
+									<select class="form-control" name="EMP_ID">
+										<?php if($idemployee != null) 
+                  				foreach($idemployee as $key => $row) :?>
+										<option value="<?php echo $row['EMP_ID'] ?>">
+											<?php echo $row['EMP_ID'] ?> </option>
+										<?php endforeach ?>
+
 									</select>
 								</div>
-								</label>
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-lg-4" for="reservation">ตั้งแต่วันที่ - ถึงวันที่ :</label>
-								<div class="col-lg-4">
-									<div class="input-group">
-										<span class="input-group-addon">
-											<i class="icon-calendar"></i>
-										</span>
-										<input type="text"  data-date-format="dd-mm-Y" name="DAY"  value="<?php echo date("d-m-Y", strtotime($leaving[0]['LEA_DATESTART']))." - ".date("d-m-Y", strtotime($leaving[0]['LEA_DATEEND']))  ?>" id="reservation" class="form-control" />
-									</div>
-								</div>
+								<label class="control-label col-lg-4" for="dp2">วันที่มอบเงิน :</label>
+									<div class="col-lg-3">
+                           				<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
+                              				data-date-format="dd-mm-yyyy">
+											<input class="form-control" type="text" value="12-02-2012" readonly=""
+											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name=" " required />
+                                			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
+                            			</div>
+                        			</div>	
 							</div>
 
-							<div class="form-group ">
-									<label class="control-label col-lg-4">หมายเหตุ :</label>
-									<div class="col-lg-4">
-										<textarea class="form-control" rows="6" name="LEA_ETC" id="LEA_ETC" required><?php echo $leaving[0]['LEA_ETC']?></textarea>
-									</div>
+                            <div class="form-group">
+								<label class="control-label col-lg-4" for="dp2">รอบที่จ่ายเงิน :</label>
+									<div class="col-lg-3">
+                           				<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
+                              				data-date-format="dd-mm-yyyy">
+											<input class="form-control" type="text" value="12-02-2012" readonly=""
+											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name=" " required />
+                                			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
+                            			</div>
+                        			</div>	
 							</div>
+
+						
 
 					</div>
 
 					<div class="form-actions no-margin-bottom" style="text-align:center;">
-						<input type="submit" value="ยืนยัน" class="btn btn-primary btn-lg" />
-						<a href="<?php echo base_url('index.php/leaving_controller')?>" class="btn btn-danger btn-lg" >ยกเลิก</a>
-		
+						<input id="submit" type="submit" value="ยืนยัน" class="btn btn-primary btn-lg" />
+						<a href="<?php echo base_url('index.php/TimeTable_controller')?>" class="btn btn-danger btn-lg">ยกเลิก</a>
+
 
 					</div>
 					</form>
+
 				</div>
 			</div>
+
 
 			<!-- ************************************ เขียนโปรแกรม ************************************ -->
 		</div>
@@ -149,13 +135,30 @@
 	<!--END MAIN WRAPPER -->
 
 	<!-- Modal -->
+
 	<script>
 		$('#modal-submit').click(function () {
 			$('#block-validate').submit();
 		});
 
-		</script>
-
+		function checktime(){
+			timestart = document.getElementById('WOR_TIMEWORK').value
+			timeend = document.getElementById('WOR_TIMEOUT').value
+			time1= new Date("2014-02-02 "+timestart);
+			time2= new Date("2014-02-02 "+timeend);
+			if(timestart != "" && timeend != ""){			
+				if(time2 <= time1 ){
+					document.getElementById("start").innerHTML = "โปรดกรอกรูปแบบเวลาให้ถูกต้อง"; 
+					document.getElementById("end").innerHTML = "โปรดกรอกรูปแบบเวลาให้ถูกต้อง"; 
+					document.getElementById("submit").disabled = true;
+				}else{
+					document.getElementById("start").innerHTML = ""; 
+					document.getElementById("end").innerHTML = ""; 
+					document.getElementById("submit").disabled = false;
+				}
+			}
+		}
+</script>
 
 	<!-- End Modal  -->
 
@@ -165,8 +168,7 @@
 	<script src="<?php echo base_url('assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js')?>"></script>
 	<!-- END GLOBAL SCRIPTS -->
 
-	  <!-- PAGE LEVEL SCRIPTS -->
-	<script src="<?php echo base_url('assets/js/validationInit.js')?>"></script>
+	<!-- PAGE LEVEL SCRIPTS -->
 	<script src="<?php echo base_url('assets/plugins/validationengine/js/jquery.validationEngine.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js')?>"></script>
 	<script src="<?php echo base_url('assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js')?>"></script>
@@ -191,10 +193,10 @@
 			formInit();
 		});
 	</script>
-	<script>
-        $(function () { formValidation(); });
-        </script>
 	<!-- END PAGE LEVEL SCRIPTS -->
+
+
+
 </body>
 <!-- END BODY -->
 
