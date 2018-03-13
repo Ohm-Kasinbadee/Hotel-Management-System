@@ -39,6 +39,11 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/validationengine/css/validationEngine.jquery.css')?>" />
 	<!-- END PAGE LEVEL  STYLES -->
 
+	<!-- PAGE LEVEL STYLES -->
+	<link href="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.css')?>" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- END PAGE LEVEL  STYLES -->
+
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -67,58 +72,58 @@
 				<div class="row">
 					</header>
 					<div id="collapseOne" class="accordion-body collapse in body">
-						<form action="<?php echo base_url('index.php/TimeTableAdd_controller/getdataemp')?>" class="form-horizontal" id="block-validate"
-						method="post">
-
-							<div class="form-group">
-								<label class="control-label col-lg-4">ID :</label>
-								<div class="col-lg-3">
-									<select class="form-control" name="EMP_ID">
-										<?php if($idemployee != null) 
-                  				foreach($idemployee as $key => $row) :?>
-										<option value="<?php echo $row['EMP_ID'] ?>">
-											<?php echo $row['EMP_ID'] ?> </option>
-										<?php endforeach ?>
-
-									</select>
+						
+						<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+										<thead>
+											<tr>
+												<th>วันที่ทำงาน</th>
+												<th>ID</th>
+												<th>ชื่อ</th>
+												<th>นามสกุล</th>
+												<th>เวลาเข้างาน</th>
+												<th>เวลาออกงาน</th>
+												<th>ชั่วโมง</th>
+												<th>จำนวนเงิน(THB)</th>
+												<th>สถานะการจ่ายเงิน</th>
+											</tr>
+										</thead>
+										<tbody>
+										<?php if($working != null)
+                  											foreach($working as $key => $row) :?>
+                    										<tr>
+															<td> <?php echo $row["WOR_DATEWORK"] ?></td>
+															<td> <?php echo $row["EMP_ID"] ?></td>
+															<td> <?php echo $row["EMP_FNAME"] ?></td>
+															<td> <?php echo $row["EMP_LNAME"] ?></td>
+															<td> <?php echo $row["WOR_TIMEWORK"] ?> </td>
+															<td> <?php echo $row["WOR_TIMEOUT"] ?> </td>
+															<td> <?php echo $row["test"] ?> ชม.</td>
+															<td> <?php echo $row["test"]*25 ?></td>
+															<td  id="status"class="text-center"><input type="checkbox" checked /> </td>
+														 <?php endforeach ?>
+										</tbody>
+									</table>
 								</div>
 							</div>
+						</div>
+					</div>
+					</div>
+				</div>
 
-							<div class="form-group">
-								<label class="control-label col-lg-4" for="dp2">วันที่มอบเงิน :</label>
-									<div class="col-lg-3">
-                           				<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
-                              				data-date-format="dd-mm-yyyy">
-											<input class="form-control" type="text" value="12-02-2012" readonly=""
-											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name=" " required />
-                                			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
-                            			</div>
-                        			</div>	
-							</div>
-
-                            <div class="form-group">
-								<label class="control-label col-lg-4" for="dp2">รอบที่จ่ายเงิน :</label>
-									<div class="col-lg-3">
-                           				<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
-                              				data-date-format="dd-mm-yyyy">
-											<input class="form-control" type="text" value="12-02-2012" readonly=""
-											value="<?php echo date(" d-m-Y ")?>" data-date-format="dd-mm-Y" name=" " required />
-                                			<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
-                            			</div>
-                        			</div>	
-							</div>
-
-						
 
 					</div>
 
 					<div class="form-actions no-margin-bottom" style="text-align:center;">
-						<input id="submit" type="submit" value="ยืนยัน" class="btn btn-primary btn-lg" />
-						<a href="<?php echo base_url('index.php/TimeTable_controller')?>" class="btn btn-danger btn-lg">ยกเลิก</a>
+						<button id="submit" class="btn btn-primary btn-lg" >ยืนยัน</button>
+						<a href="<?php echo base_url('index.php/Salary_controller')?>" class="btn btn-danger btn-lg">ยกเลิก</a>
 
 
 					</div>
-					</form>
 
 				</div>
 			</div>
@@ -136,28 +141,27 @@
 
 	<!-- Modal -->
 
-	<script>
-		$('#modal-submit').click(function () {
-			$('#block-validate').submit();
-		});
+<script>
+	 $(document).on('click','#submit',function(e) {
+  var table = document.getElementById("dataTables-example");
 
-		function checktime(){
-			timestart = document.getElementById('WOR_TIMEWORK').value
-			timeend = document.getElementById('WOR_TIMEOUT').value
-			time1= new Date("2014-02-02 "+timestart);
-			time2= new Date("2014-02-02 "+timeend);
-			if(timestart != "" && timeend != ""){			
-				if(time2 <= time1 ){
-					document.getElementById("start").innerHTML = "โปรดกรอกรูปแบบเวลาให้ถูกต้อง"; 
-					document.getElementById("end").innerHTML = "โปรดกรอกรูปแบบเวลาให้ถูกต้อง"; 
-					document.getElementById("submit").disabled = true;
-				}else{
-					document.getElementById("start").innerHTML = ""; 
-					document.getElementById("end").innerHTML = ""; 
-					document.getElementById("submit").disabled = false;
-				}
-			}
-		}
+  alert(table.rows[1].cells[8]);
+  
+  for(var r=1 ; r < table.rows.length ; r++){
+	  var num = table.rows[r].cells[8]
+	//  alert(table.rows[r].cells[8].);
+	
+	$.ajax({
+         data: { date:table.rows[r].cells[0].innerHTML, id:table.rows[r].cells[1].innerHTML , money:table.rows[r].cells[7].innerHTML  },
+         type: "post",
+         url: "<?php echo base_url();?>index.php/SalaryAdd_controller/AddSalary",
+         success: function(data){
+            //   alert("Data Save: " + data);
+         }
+	});
+	
+  }
+ });
 </script>
 
 	<!-- End Modal  -->
@@ -194,7 +198,17 @@
 		});
 	</script>
 	<!-- END PAGE LEVEL SCRIPTS -->
+	
+		<!-- PAGE LEVEL SCRIPTS -->
+		<script src="<?php echo base_url('assets/plugins/dataTables/jquery.dataTables.js')?>"></script>
+	<script src="<?php echo base_url('assets/plugins/dataTables/dataTables.bootstrap.js')?>"></script>
+	<script>
+		$(document).ready(function () {
+			$('#dataTables-example').dataTable();
+		});
 
+	</script>
+	<!-- END PAGE LEVEL SCRIPTS -->
 
 
 </body>

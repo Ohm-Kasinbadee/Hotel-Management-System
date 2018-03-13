@@ -7,16 +7,17 @@ class FormCustomerModel extends CI_Model {
                 parent::__construct();
                 // Your own constructor code
         }
-        
-        public function getdatacus(){
-                $CUSID = $this->input->post('id');
-                $CUSFNAME = $this->input->post('fname');
-                $CUSLNAME = $this->input->post('lname');
-                $CUSPHONE = $this->input->post('tel');
-                $CUSEMAIL = $this->input->post('email');
 
-            $query = $this->db->query("INSERT INTO customer (CUS_ID, CUS_FNAME, CUS_LNAME, CUS_PHONE, CUS_EMAIL)
-                                       VALUES('$CUSID', '$CUSFNAME', '$CUSLNAME', '$CUSPHONE', '$CUSEMAIL')"); // session
+        public function cus(){
+            $query = $this->db->query("SELECT ROOM_ID
+                                        FROM room "); // session
+             return $query->result_array();
+        }
+    
+        public function getdatares(){
+
+            $query = $this->db->query("INSERT INTO reserve (RES_ID, CUSTOMER_CUS_ID, RES_ROOMAMOUNT, PROMOTION_PRO_ID, RES_DATERES, RES_DEPOSIT, RES_TOTALPRICE)
+                                       VALUES('$RES_ID', '$CUSTOMER_CUS_ID', '$RES_ROOMAMOUNT', '$PROMOTION_PRO_ID', '$RES_DATERES', '$RES_DEPOSIT', '$RES_TOTALPRICE')"); // session
                                       
         //     print_r($query);
         }

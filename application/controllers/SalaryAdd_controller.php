@@ -6,8 +6,8 @@ class SalaryAdd_controller extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('SalaryAddModel');
-		$datas = $this->SalaryAddModel->idemployee();
-		$dataShowemp['idemployee'] = $datas;
+		$datas = $this->SalaryAddModel->getdata();
+		$dataShowemp['working'] = $datas;
 
     	$this->load->view('SalaryAdd',$dataShowemp);
 	}
@@ -18,5 +18,9 @@ class SalaryAdd_controller extends CI_Controller {
 		
 		 redirect('Salary_controller');
 	}
-	
+
+	public function AddSalary(){
+		print_r($_POST['date'].$_POST['id'].$_POST['money']);
+	}
+
 }
