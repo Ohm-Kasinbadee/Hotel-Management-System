@@ -81,6 +81,7 @@
 									<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 										<thead>
 											<tr>
+												<th>ลำดับ</th>
 												<th>วันที่ทำงาน</th>
 												<th>ID</th>
 												<th>ชื่อ</th>
@@ -90,22 +91,27 @@
 												<th>ชั่วโมง</th>
 												<th>จำนวนเงิน(THB)</th>
 												<th>สถานะการจ่ายเงิน</th>
+												<th style="display:none;"></th>
 											</tr>
 										</thead>
 										<tbody>
 										<?php if($working != null)
-                  											foreach($working as $key => $row) :?>
-                    										<tr>
-															<td> <?php echo $row["WOR_DATEWORK"] ?></td>
-															<td> <?php echo $row["EMP_ID"] ?></td>
-															<td> <?php echo $row["EMP_FNAME"] ?></td>
-															<td> <?php echo $row["EMP_LNAME"] ?></td>
-															<td> <?php echo $row["WOR_TIMEWORK"] ?> </td>
-															<td> <?php echo $row["WOR_TIMEOUT"] ?> </td>
-															<td> <?php echo $row["test"] ?> ชม.</td>
-															<td> <?php echo $row["test"]*25 ?></td>
-															<td  id="status"class="text-center"><input type="checkbox" checked /> </td>
-														 <?php endforeach ?>
+												foreach($working as $key => $row) :?>
+												<tr>
+												<th> <?php echo $key+1?> </th>
+												<td> <?php echo $row["WOR_DATEWORK"] ?></td>
+												<td> <?php echo $row["EMP_ID"] ?></td>
+												<td> <?php echo $row["EMP_FNAME"] ?></td>
+												<td> <?php echo $row["EMP_LNAME"] ?></td>
+												<td> <?php echo $row["WOR_TIMEWORK"] ?> </td>
+												<td> <?php echo $row["WOR_TIMEOUT"] ?> </td>
+												<td> <?php echo $row["test"] ?></td>
+												<td> <?php echo $row["test"]*25 ?></td>
+												<td  class="text-center">
+													<input  class="checkToSave" type="checkbox" value="<?php echo $key?>" name="datas[]" onclick='changeStatus(this);' />
+												</td>
+												<td style="display:none;"><?php echo $row["WOR_ID"] ?></td>
+												<?php endforeach ?>
 										</tbody>
 									</table>
 								</div>
@@ -119,7 +125,7 @@
 					</div>
 
 					<div class="form-actions no-margin-bottom" style="text-align:center;">
-						<button id="submit" class="btn btn-primary btn-lg" >ยืนยัน</button>
+						<a id="submit" class="btn btn-primary btn-lg" href="<?php echo base_url('index.php/Salary_controller')?>">ยืนยัน</a>
 						<a href="<?php echo base_url('index.php/Salary_controller')?>" class="btn btn-danger btn-lg">ยกเลิก</a>
 
 
@@ -142,26 +148,36 @@
 	<!-- Modal -->
 
 <script>
-	 $(document).on('click','#submit',function(e) {
-  var table = document.getElementById("dataTables-example");
-
-  alert(table.rows[1].cells[8]);
-  
-  for(var r=1 ; r < table.rows.length ; r++){
-	  var num = table.rows[r].cells[8]
-	//  alert(table.rows[r].cells[8].);
+	var employee = [];
+	function changeStatus(check) {
+		var table = document.getElementById("dataTables-example");
+		var index = parseInt(check.value)+1;
+    	if(check.checked == true){
+			employee.push({
+				id: table.rows[index].cells[10].innerHTML,
+				date: table.rows[index].cells[1].innerHTML,
+				emp_id: table.rows[index].cells[2].innerHTML,
+				hour: table.rows[index].cells[7].innerHTML,
+				wage: table.rows[index].cells[8].innerHTML,
+			})	
+			console.log(employee)		
+		}else{
+			for(var i = 0; i < employee.length; i++){
+				if(employee[i].id == table.rows[index].cells[10].innerHTML){
+					employee.splice(i,1);
+				}
+			}
+			console.log(employee)
+		}
+	 }
 	
-	$.ajax({
-         data: { date:table.rows[r].cells[0].innerHTML, id:table.rows[r].cells[1].innerHTML , money:table.rows[r].cells[7].innerHTML  },
-         type: "post",
-         url: "<?php echo base_url();?>index.php/SalaryAdd_controller/AddSalary",
-         success: function(data){
-            //   alert("Data Save: " + data);
-         }
-	});
-	
-  }
- });
+	 $(document).on('click','#submit',function(e) {		
+		$.ajax({
+				data: {employee: employee},
+				type: "post",
+				url: "<?php echo base_url();?>index.php/SalaryAdd_controller/AddSalary"
+			});
+		});
 </script>
 
 	<!-- End Modal  -->

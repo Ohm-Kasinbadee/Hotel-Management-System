@@ -9,9 +9,8 @@ class SalaryModel extends CI_Model {
         }
         
         public function getdata(){
-            $query = $this->db->query("SELECT  w.EMP_ID, e.EMP_FNAME, e.EMP_LNAME, w.WOR_DATEWORK, w.WOR_TIMEWORK , w.WOR_TIMEOUT,
-                                               TIMEDIFF(  w.WOR_TIMEOUT , w.WOR_TIMEWORK ) AS test
-                                        FROM working w NATURAL JOIN employee e"); // session
+            $query = $this->db->query("SELECT  s.EMP_ID, e.EMP_FNAME, e.EMP_LNAME, s.SAL_DATE, s.SAL_ROUNDOFSALARY , s.SAL_MONEY                                
+                                        FROM salary s NATURAL JOIN employee e"); // session
             return $query->result_array();
         }
 

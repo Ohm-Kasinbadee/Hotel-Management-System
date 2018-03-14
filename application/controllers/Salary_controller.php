@@ -7,7 +7,7 @@ class Salary_controller extends CI_Controller {
 	{
 		$this->load->model('SalaryModel');	
 		$datas = $this->SalaryModel->getdata();
-		$dataShowemp['working'] = $datas;
+		$dataShowemp['salary'] = $datas;
 
         $this->load->view('menu');
     	$this->load->view('Salary',$dataShowemp);

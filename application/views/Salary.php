@@ -65,30 +65,26 @@
 												<th>ID</th>
 												<th>ชื่อ</th>
 												<th>นามสกุล</th>
+												<th>วันที่ทำงาน</th>
 												<th>วันที่มอบเงิน</th>
-												<th>จำนวน</th>
-												<th>อัพเดด</th>
+												<th>จำนวนเงิน(THB)</th>
 											</tr>
 										</thead>
 										<tbody>
-										<!-- <?php if($working != null)
-                  											foreach($working as $key => $row) :?>
+										<?php if($salary != null)
+                  											foreach($salary as $key => $row) :?>
                     										<tr>
                     										<td> <?php echo $row["EMP_ID"] ?></td>
 															<td> <?php echo $row["EMP_FNAME"] ?></td>
 															<td> <?php echo $row["EMP_LNAME"] ?></td>
-                    										<td> <?php echo $row["WOR_DATEWORK"] ?></td>
-															<td> <?php echo $row["WOR_TIMEWORK"] ?> </td>
-															<td> <?php echo $row["WOR_TIMEOUT"] ?> </td>
-															<td> <?php echo $row["test"] ?> </td>
-															<td><div class='text-center'><a class='btn btn-success' href='<?php echo base_url('index.php/SalaryUpdate_controller?empid='.$row["EMP_ID"])?>'>
-															<i class='icon-cog '></i> Update</a></div> </td>
-														 <?php endforeach ?> -->
+                    										<td> <?php echo $row["SAL_DATE"] ?></td>
+															<td> <?php echo $row["SAL_ROUNDOFSALARY"] ?> </td>
+															<td> <?php echo $row["SAL_MONEY"] ?> </td>
+														 <?php endforeach ?>
 										</tbody>
 									</table>
 									<p>
 									<a href="<?php echo base_url('index.php/SalaryAdd_controller')?>"><button class="btn btn-success"><i class="icon-plus icon-white"></i> Add Salary</button></a>
-									<!-- <a href="#"><button class="btn btn-danger"><i class="icon-remove  icon-white"></i> Delete</button></a> -->
 								</p>
 								</div>
 							</div>

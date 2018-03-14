@@ -12,15 +12,11 @@ class SalaryAdd_controller extends CI_Controller {
     	$this->load->view('SalaryAdd',$dataShowemp);
 	}
 
-	public function getdataemp(){
-		$this->load->model('SalaryAddModel');
-		$this->SalaryAddModel->getdataemp();
-		
-		 redirect('Salary_controller');
-	}
-
 	public function AddSalary(){
-		print_r($_POST['date'].$_POST['id'].$_POST['money']);
+		$employee = $_POST['employee'];
+		$this->load->model('SalaryAddModel');
+		$this->SalaryAddModel->addSalary($employee);
+		redirect('Salary_controller');
 	}
 
 }
